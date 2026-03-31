@@ -1,0 +1,8 @@
+streamlit 
+langchain
+langchain-groq
+langchain-community
+python-dotenv
+feedparser
+requests
+beautifulsoup4
