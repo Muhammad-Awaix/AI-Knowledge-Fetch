@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 from datetime import datetime, timezone
 import email.utils
 
-def is_recent(date_str, days=30):
+def is_recent(date_str, days=90):
     try:
         parsed = email.utils.parsedate_to_datetime(date_str)
         now = datetime.now(timezone.utc)
@@ -17,13 +17,12 @@ def clean_html(text):
 
 def fetch_ai_news():
     feeds = [
-        "https://huggingface.co/blog/feed.xml",
-        "https://blog.tensorflow.org/feeds/posts/default",
-        "https://openai.com/blog/rss.xml",
-        "https://deepmind.google/blog/rss.xml",
-        "https://towardsdatascience.com/feed",
-        "https://venturebeat.com/category/ai/feed/",
-    ]
+    "https://venturebeat.com/category/ai/feed/",
+    "https://techcrunch.com/category/artificial-intelligence/feed/",
+    "https://bdtechtalks.com/feed/",
+    "https://blog.tensorflow.org/feeds/posts/default",
+    "https://newsletter.theaiedge.io/feed",
+]
     
     articles = []
     for feed_url in feeds:
